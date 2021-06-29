@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US"> 
+<meta name="keywords" content="Olivia Kan-Sperling" charset="utf-8">
+
+   
+  <head> 
+    <title>Sahara Itza Live Chat</title> 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="chat.js"> </script> 
+      
+    <style> 
+      input {display: block;} 
+    body{
+            font-family: Helvetica;
+        }
+      .scrollabletextbox {
+        height:300px;
+        width:500px;
+        font-family: Helvetica;
+        font-size: 82%;
+        overflow:scroll;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+        .bookwindow {
+            height:300px;
+        width:500px;
+        }
+        
+        .messageA{
+            color: black;
+        }
+        .messageB{
+            color: red;
+        }
+        
+        #chatbox{
+            position:fixed;
+            top:350px;
+            width:500px;
+        }
+        
+       
+    </style> 
+  </head> 
+  <body> 
+      Sahara Itza Live Chat
+      <div id="messages" class="scrollabletextbox"></div>
+     
+    <form id="chatbox"> 
+      <textarea id="textarea_id" width=500px></textarea> 
+      <input id="submitbutton" type="submit" value="Send"/> 
+        <div onKeyPress="return checkSubmit(event)"/>
+    </form>  
+      
+       <!--<iframe id="bookwindow"
+               src='https://www.amazon.com/This-Thing-Between-UsNovel/dp/0374539235' title="This Thing Between Us"></iframe> -->
+
+    </body> 
+</html> 
