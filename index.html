@@ -16,15 +16,29 @@
       .scrollabletextbox {
         height:300px;
         width:500px;
+          
         font-family: Helvetica;
         font-size: 82%;
         overflow:scroll;
         display: flex;
         flex-direction: column-reverse;
     }
+        #title{
+            background: white;
+            opacity: 80%;
+            
+        }
+        #box{
+           height:300px;
+            width:500px;
+            background: white;
+            opacity: 80%;
+            z-index:-2;
+            position:absolute;
+        }
         .bookwindow {
             height:300px;
-        width:500px;
+            width:500px;
         }
         
         .messageA{
@@ -39,13 +53,25 @@
             top:350px;
             width:500px;
         }
+        #bookpage{
+            display:none;
+            width:100%;
+            height:100%;
+            position:absolute;
+            z-index:-10;
+            top: 2%;
+            left: 2%;
+        }
         
        
     </style> 
   </head> 
   <body> 
-      Sahara Itza Live Chat
+      <div id="title">Sahara Itza Live Chat </div>
+      <div id="box"></div>
       <div id="messages" class="scrollabletextbox"></div>
+      
+       <iframe id="bookpage" src="https://us.macmillan.com/books/9780374539238" title="This Thing Between Us"></iframe> 
      
     <form id="chatbox"> 
       <textarea id="textarea_id" width=500px></textarea> 

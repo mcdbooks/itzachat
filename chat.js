@@ -80,7 +80,9 @@ const FINALMESSAGENUMBER = 13;
  
 
 $(document).ready(() => {
-    var audioObj;
+    var audioObj_one;
+    var audioObj_two;
+    var audioObj_three;
     
     //introductory sequence
     addMessageA(itzaMessages.pop());
@@ -129,10 +131,10 @@ $(document).ready(() => {
             userInputString =  "I love being asked after my consumer preferences; it makes me feel heard and seen in a meaningful way.";
         }
         else if (messageTicker == 10){
-            audioObj = new Audio("typing.mp3");
-            audioObj.addEventListener("canplaythrough", event => {
+            audioObj_three = new Audio("typing.mp3");
+            audioObj_three.addEventListener("canplaythrough", event => {
                 /* the audio is now playable; play it if permissions allow */
-                audioObj.play();
+                audioObj_three.play();
             }); 
             userInputString = "Wow, thanks for asking, Itza. "+userInputString+". I really need your help, Itza.";
         }
@@ -147,11 +149,11 @@ $(document).ready(() => {
         
         if (messageTicker == 2){
             console.log("spooky"); 
-            audioObj = new Audio("typing.mp3");
-            audioObj.volume = 0.2;
-            audioObj.addEventListener("canplaythrough", event => {
+            audioObj_one = new Audio("typing.mp3");
+            audioObj_one.volume = 0.2;
+            audioObj_one.addEventListener("canplaythrough", event => {
                 /* the audio is now playable; play it if permissions allow */
-                audioObj.play();
+                audioObj_one.play();
             }); 
             
         }
@@ -176,22 +178,22 @@ $(document).ready(() => {
               }, 1000);        
         }
         else if (messageTicker == 7){
-           audioObj = new Audio("typing.mp3");
-            audioObj.volume = 0.2;
-            audioObj.addEventListener("canplaythrough", event => {
+           audioObj_two = new Audio("typing.mp3");
+            audioObj_two.volume = 0.6;
+            audioObj_two.addEventListener("canplaythrough", event => {
                 /* the audio is now playable; play it if permissions allow */
-                audioObj.play();
+                audioObj_two.play();
             }); 
            var confidence = parseInt(userInputString);
             var confidence_message;
              if (confidence < 5){
                  confidence_message = "Yikes. Have you ever found yourself wishing you were someone else?";
-                 window.open('https://en.wikipedia.org/wiki/Pazuzu','popup','width=500,height=500,scrollbars=no,resizable=no');
+                 window.open('https://en.wikipedia.org/wiki/Nicolai_Abildgaard#/media/File:Nachtmahr_(Abildgaard).jpg','popup','width=500,height=500,scrollbars=no,resizable=no');
              }else if (confidence == 5){
                 loudness_message = "Are you sure?";
              }else{
                  confidence_message = "….Well you are certainly confident, aren't you?";
-                window.open('https://es.wikipedia.org/wiki/Lucifer#/media/Archivo:Paradise_Lost_12.jpg','popup','width=500,height=500,scrollbars=no,resizable=no');
+                window.open('https://en.wikipedia.org/wiki/Spirit_possession','popup','width=500,height=500,scrollbars=no,resizable=no');
              }
              
             setTimeout(
@@ -200,13 +202,18 @@ $(document).ready(() => {
               }, 1200);    
         }else if (messageTicker == 14){
              userInputString =  "Being alone forever.";        
+        }else if (messageTicker > FINALMESSAGENUMBER){
+            console.log("game has come to an end."); 
+            
+           
+            setTimeout(function(){
+                audioObj_one.pause();
+                audioObj_two.pause();
+                audioObj_three.pause();
+                document.getElementById("bookpage").style.display="block"; 
+            }, 14000);
         }
-        
-        
-        
-        else if (messageTicker > (FINALMESSAGENUMBER)){
-            console.log("game has come to an end."); window.open('https://us.macmillan.com/books/9780374539238','popup','width=1000,height=1000,scrollbars=no,resizable=no'); 
-        }
+
         
         
         
@@ -220,7 +227,7 @@ $(document).ready(() => {
         }else{
            popThreeMessages(newdiv);
         }
-
+       
         return false; 
          
     }); 
