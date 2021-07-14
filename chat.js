@@ -22,9 +22,9 @@ function addMessageA(string) {
 //messages, bottom to top
 const itzaMessages = [
     //message 14
-    "This Thing Between Us: A Novel. Author: Gus Moreno. Paperback – October 12, 2021. ISBN-13 : 978-0374539238. Publisher: MCD x FSG Originals.",
-    "Based on your responses, I would recommend this book.",
-    "Thanks! This information has been very helpful to diagnose the problems you’re having.",
+    "This Thing Between Us: A Novel. Author Gus Moreno. Publisher: MCDxFSG Originals. Paperback-October 12, 2021.",
+    "Based on your responses, I would recommend this book as a solution:",
+    "Thanks for your time today! This information has been very helpful to diagnose the problems you’re having.",
     //message 14
     "What if you didn't have to? Would you like that?",
     //message 13
@@ -32,14 +32,14 @@ const itzaMessages = [
     "I hope you're not lying!",
     //message 12
     "Is the address registered to your device current?",
-    "Thank you.", 
+    "Alright then.", 
     //message 11
     "Do you notice recurring symbols in your everyday life?",
     //message 10
-    "Ok, and, as a child, did you suffer from nightmares?", 
+    "Okay. As a child, did you suffer from nightmares?", 
     //message 9
     "Do you frequently experience any of the following: confusion, regrets, dithering?",//user input starts being messed with
-    "Thanks.", 
+    "Good.", 
     //message 8
     "How likely would you to be to buy a combination aroma-diffuser-coffee-grinder, on a scale of 1-10?", //multiply user number by 10
     "Let me ask you something.",
@@ -211,7 +211,7 @@ $(document).ready(() => {
                 audioObj_two.pause();
                 audioObj_three.pause();
                 document.getElementById("bookpage").style.display="block"; 
-            }, 14000);
+            }, 10000);
         }
 
         
@@ -259,20 +259,6 @@ function showPopup() {
   popup.classList.toggle("show");
 }
 
-function brokenspliceMessageA(message){
-    //split message into an array
-    var collect_str = "";
-    for (let c of message) {
-        collect_str += c;
-        if (((c === '!') || (c === '?')) || (c=== '.')){
-            addMessageA(collect_str);
-        
-            setTimeout(function(){
-                collect_str = '';
-            }, 2000);
-        }
-    }
-}
 
 
 
